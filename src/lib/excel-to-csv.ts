@@ -28,7 +28,7 @@ export function pivotByMes(data: ParsedExcelData): ParsedExcelData {
     if (!grupos.has(chave)) {
       const base: Record<string, string | number> = {};
       chaves.forEach(c => base[c] = row[c] || "");
-      meses.forEach(m => base[m] = "");
+      meses.forEach(m => base[m] = "0,00");
       grupos.set(chave, base);
     }
     const grupo = grupos.get(chave)!;
